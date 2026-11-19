@@ -1,0 +1,3 @@
+select vdisk file="C:\devdata\devdrive.vhdx"
+attach vdisk
+assign letter=V

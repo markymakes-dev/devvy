@@ -1,0 +1,4 @@
+create vdisk file="C:\devdata\devdrive.vhdx" maximum=81920 type=expandable
+attach vdisk
+create partition primary
+assign letter=V
