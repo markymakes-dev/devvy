@@ -59,3 +59,21 @@ Note: repos exist that auto-convert sites/docs into agent skills (scrape → chu
 | FastMCP (PrefectHQ) | 4 steals; never swap protocol | memory + #18/#16 notes |
 | jqknono script | Prior-art validation of junction workflow | research/stack-decision.md §6 |
 | Steam Mover / LSE / RoboMirror / ChoEazyCopy / WinRoboCopy | Single-primitive tools; workflow layer unclaimed | PLAN.md §6 |
+| modern-web-guidance (GoogleChrome) | **Adopted** — execution-quality layer, CLI on-demand | §8 below |
+
+## 8. Execution-quality layer (adopted 2026-11-20)
+
+**[GoogleChrome/modern-web-guidance](https://github.com/GoogleChrome/modern-web-guidance)** — 23,424★, Apache-2.0, stewarded by the Chrome/Edge/Firefox/MDN teams, actively maintained (pushed 2026-11-17). 262 modern web features + 204 real-world use-case guides, token-efficient (evals prune what models already know). CLI-driven, on-demand: `npx modern-web-guidance@latest install` (interactive — run in the Devvy session) / `search "<topic>"` / `retrieve "<id>"` / `legacy-scan .`.
+
+Why it fits Devvy specifically: Devvy is Electron = bundled Chromium, so the modern APIs it teaches (view transitions, container queries, popover, `oklch`, anchor positioning, `:user-invalid`) are natively available — check each against Electron's Chromium version. A11y guides are part of the bar, not polish.
+
+**Layering — four layers, no overlap:**
+
+| Layer | Tool |
+|---|---|
+| Direction / taste (Devvy-specific) | `devvy-ui` skill + this folder |
+| Ban filter (what NOT to ship) | `antislop-design` skill / unslop.site |
+| Aesthetic principles | `frontend-design` skill (Anthropic official, already installed) |
+| Platform-correct execution | `modern-web-guidance` CLI (search/retrieve/legacy-scan) |
+
+Trending landscape checked 2026-11-20 (GitHub API, star-ranked; websearch quota exhausted): Ilm-Alan/frontend-design 179★ (eight aesthetic anchors) · ara-mkr/claude-artisan 84★ (224 styles) · AgriciDaniel/gogh 70★ (aggregates six design skills) · aladicf/better-web-ui 53★ · Moddingflow/better-design 52★ (MIT) · pbakaus/impeccable (independent notable, impeccable.style). All redundant with the four layers above for Devvy; consult if we ever want a style bank.
